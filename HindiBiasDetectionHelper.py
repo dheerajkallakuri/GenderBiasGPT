@@ -68,7 +68,7 @@ class HindiEmbedder:
         if token.lower() not in self.gendered_words:
           word_vector = np.array(embeddings[i])
           similarity = self.cosine_similarity(word_vector, self.hindi_gender_subspace)
-          bias_tokens[token.lower()] = {"cosine_similarity": similarity, "word_importance": word_importance}
+          bias_tokens[token.lower()] = {"cosine_similarity": similarity, "word_importance": word_importance[i]}
           if similarity > 0:
             female_bias_score += similarity*word_importance[i]
           else:

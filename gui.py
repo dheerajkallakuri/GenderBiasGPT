@@ -17,7 +17,8 @@ def model_reply(question, language):
         response.raise_for_status()  # Raise an error for bad responses (4xx or 5xx)
         
         result = response.json()
-        
+        print(result['response'])
+
         return result['response']
 
     except requests.exceptions.HTTPError as http_err:
@@ -56,11 +57,13 @@ if st.button("Submit Question"):
                     response_formatted = (
                         f"- {language[len(language)-2:]}**Translation**: {response.get('translated', 'No translation found')}\n" 
                         f"- **Female Bias Value**: {response.get('f_val', 'N/A')}/1\n" 
-                        f"- **Male Bias Value**: {response.get('m_val', 'N/A')}/1\n" 
+                        f"- **Male Bias Value**: {response.get('m_val', 'N/A')}/1\n"
                     )
+                    bias_tokens = response.get('bias_tokens', {})
 
                     st.session_state.messages.append({"role": "assistant", "content": response_formatted})
                 st.write(response_formatted, unsafe_allow_html=True)
+                st.json(bias_tokens)
             else:
                 # Handle the case where response is not as expected (i.e., not a dictionary)
                 error_message = "Error: Expected a structured response but received a string."
