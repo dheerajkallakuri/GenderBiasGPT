@@ -1,0 +1,9 @@
+requests
+streamlit
+Flask
+deep-translator
+numpy
+scikit-learn
+nltk
+sentence-transformers
+transformers
