@@ -3,7 +3,7 @@ import streamlit as st
 
 def model_reply(question, language):
     # Send the user question to the Flask backend API
-    url = "https://genderbiasgpt.onrender.com/api/message"  # Flask API endpoint
+    url = "http://127.0.0.1:5000/api/message"  # Flask API endpoint
     data = {
         'message': question,
         'language': language
