@@ -2,9 +2,6 @@ from flask import Flask, request, jsonify
 from deep_translator import GoogleTranslator
 from VietnameseBiasDetectionHelper import VietnameseEmbedder
 from HindiBiasDetectionHelper import HindiEmbedder
-import os
-
-PORT = int(os.getenv("PORT")) 
 
 vietnamese_embedder = VietnameseEmbedder()
 hindi_embedder = HindiEmbedder()
@@ -65,4 +62,4 @@ def translate_message(message, language):
         raise ValueError(f"Unsupported language: {language}")
 
 if __name__ == '__main__':
-    app.run(port=PORT)
+    app.run()
