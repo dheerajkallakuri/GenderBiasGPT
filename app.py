@@ -65,4 +65,4 @@ def translate_message(message, language):
         raise ValueError(f"Unsupported language: {language}")
 
 if __name__ == '__main__':
-    app.run()
+    app.run(port=PORT)
