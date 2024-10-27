@@ -1,6 +1,9 @@
 import requests
 import streamlit as st
 
+st.set_page_config(page_title="GenderBiasGPT",
+                    page_icon="🔎")
+
 def model_reply(question, language):
     # Send the user question to the Flask backend API
     url = "http://127.0.0.1:5000/api/message"  # Flask API endpoint
@@ -57,6 +60,7 @@ if st.button("Submit Question"):
                     )
 
                     st.session_state.messages.append({"role": "assistant", "content": response_formatted})
+                st.write(response_formatted, unsafe_allow_html=True)
             else:
                 # Handle the case where response is not as expected (i.e., not a dictionary)
                 error_message = "Error: Expected a structured response but received a string."
