@@ -2,6 +2,9 @@ from flask import Flask, request, jsonify
 from deep_translator import GoogleTranslator
 from VietnameseBiasDetectionHelper import VietnameseEmbedder
 from HindiBiasDetectionHelper import HindiEmbedder
+import os
+
+PORT = int(os.getenv("PORT")) 
 
 vietnamese_embedder = VietnameseEmbedder()
 hindi_embedder = HindiEmbedder()
