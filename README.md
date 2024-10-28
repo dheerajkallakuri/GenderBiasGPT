@@ -2,6 +2,8 @@
 
 GenderBiasGPT is a tool designed to detect gender bias in text inputs, specifically for non-English languages like Vietnamese and Hindi. This model assesses whether a sentence is biased toward a male or female perspective and provides a bias score ranging from 0 to 1.
 
+[1st Place Winner at Hack SoDA 2024](https://hack-soda-2024.devpost.com/)
+
 [Demo Video Link](https://youtu.be/Y00wXz7UuC8) | [Presentation Link](https://docs.google.com/presentation/d/1gW6mgpVI6ElJAMt6ORozUrit6j601suvUXyPaN7WVYg/edit?usp=sharing) | [Devpost Link](https://devpost.com/software/genderbiasgpt-for-regional-languages)
 
 
